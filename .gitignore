@@ -1,0 +1,40 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Output directories
+outputs/
+test_outputs/
+
+# Temporary files
+*.tmp
+*.temp
+/dev/shm/
+
+# PDB files (can be large)
+*.pdb1
+*.pdb1.gz
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Singularity containers (too large for git)
+*.sif
+*.img

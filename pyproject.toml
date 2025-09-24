@@ -1,0 +1,17 @@
+[project]
+name = "rfdiffusion-local"
+version = "0.1.0"
+description = "Local RFdiffusion pipeline with AlphaFold2 validation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "scipy",
+    "biopython",
+    "py3dmol",
+    "ipywidgets",
+    "tqdm",
+    "pyyaml",
+]

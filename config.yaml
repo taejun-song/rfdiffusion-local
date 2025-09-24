@@ -1,0 +1,52 @@
+# Configuration file for RFdiffusion local pipeline
+
+# Singularity container paths
+# Update these paths to match your server setup
+containers:
+  rfdiffusion: "/path/to/rfdiffusion.sif"  # Path to your RFdiffusion singularity container
+  colabfold: "/path/to/colabfold.sif"      # Path to your ColabFold singularity container
+
+# Default parameters
+defaults:
+  # RFdiffusion parameters
+  iterations: 50
+  num_designs: 1
+  symmetry: "none"
+  order: 1
+
+  # ProteinMPNN/AF2 parameters
+  num_seqs: 8
+  num_recycles: 1
+  initial_guess: false
+  use_multimer: false
+  rm_aa: "C"
+  mpnn_sampling_temp: 0.1
+
+  # Output settings
+  work_dir: "./outputs"
+
+# Example usage scenarios
+examples:
+  unconditional_monomer:
+    contigs: "100"
+    description: "Generate unconditional monomer of length 100"
+
+  unconditional_heterooligomer:
+    contigs: "50:100"
+    description: "Generate hetero-oligomer with chains of length 50 and 100"
+
+  binder_design:
+    contigs: "A:50"
+    pdb: "4N5T"
+    description: "Design 50-residue binder to chain A of PDB 4N5T"
+
+  motif_scaffolding:
+    contigs: "40/A163-181/40"
+    pdb: "5TPN"
+    description: "Scaffold motif A163-181 from 5TPN with 40-residue flanks"
+
+  cyclic_symmetry:
+    contigs: "50"
+    symmetry: "cyclic"
+    order: 3
+    description: "Generate C3 symmetric trimer with 50-residue subunits"
